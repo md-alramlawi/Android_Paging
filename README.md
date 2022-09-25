@@ -1,4 +1,4 @@
-# Paging 3 library implementation using github users.
+
 
 A sample project demonstrate usage of `Paging 3` Library, which loading data from network requests on each page by tracking user's scroll event.
 
