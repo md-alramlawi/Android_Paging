@@ -4,7 +4,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Card
 import androidx.compose.material.CircularProgressIndicator
@@ -22,16 +21,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
+import androidx.paging.compose.LazyPagingItems
+import androidx.paging.compose.items
 import com.ramalwi.paging.data.User
 
 @Composable
 fun UserList(
-    usersList: List<User>,
+    usersList: LazyPagingItems<User>,
     combinedLoadStates: CombinedLoadStates
 ) {
     LazyColumn {
-        items(usersList) { item ->
-            UserCard(user = item)
+
+        items(usersList){item ->
+            item?.let {
+                UserCard(user = it)
+            }
         }
 
         when (combinedLoadStates.append) {
