@@ -5,5 +5,5 @@ A sample project demonstrate usage of `Paging 3` Library, which loading data fro
 
 ## Screenshots
 
-![App Screenshot](https://user-images.githubusercontent.com/60019872/192164907-6b8ea1f7-2d12-46da-8d42-258815f7da56.png)
+![App Screenshot](https://user-images.githubusercontent.com/60019872/192165204-83969d32-1998-4411-b628-e789e2cf3d9d.png)
 
