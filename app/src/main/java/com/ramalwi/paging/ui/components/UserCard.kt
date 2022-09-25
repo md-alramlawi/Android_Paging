@@ -21,7 +21,7 @@ fun UserCard(user: User) {
     Card(
         elevation = 4.dp,
         modifier = Modifier
-            .padding(6.dp)
+            .padding(horizontal = 8.dp, vertical = 4.dp)
             .fillMaxWidth()
             .wrapContentHeight()
     ) {
@@ -44,7 +44,7 @@ fun UserCard(user: User) {
             )
             Text(
                 text = user.name,
-                fontSize = 24.sp,
+                fontSize = 18.sp,
                 modifier = Modifier
                     .padding(start = 12.dp)
                     .align(CenterVertically)

@@ -11,6 +11,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.Center
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
@@ -24,13 +25,17 @@ import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.items
 import com.ramalwi.paging.data.User
+import com.ramalwi.paging.ui.theme.White
 
 @Composable
 fun UserList(
     usersList: LazyPagingItems<User>,
     combinedLoadStates: CombinedLoadStates
 ) {
-    LazyColumn {
+    LazyColumn(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
 
         items(usersList){item ->
             item?.let {
@@ -60,7 +65,7 @@ fun UserList(
                         modifier = Modifier.fillMaxSize(),
                         contentAlignment = Center
                     ) {
-                        CircularProgressIndicator()
+                        LoadingItem()
                     }
                 }
             }
@@ -83,7 +88,8 @@ fun LoadingItem() {
                 .width(42.dp)
                 .height(42.dp)
                 .padding(8.dp),
-            strokeWidth = 5.dp
+            strokeWidth = 5.dp,
+            color = White
         )
 
     }
