@@ -69,7 +69,11 @@ fun UserList(
                     }
                 }
             }
-            is LoadState.Error -> TODO()
+            is LoadState.Error -> {
+                item {
+                    ErrorItem(message = "Some error occurred")
+                }
+            }
         }
     }
 }
